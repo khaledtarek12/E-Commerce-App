@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/providers/theme_provider.dart';
+import 'package:e_commerce_app/widgets/subtitletext.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -13,8 +14,7 @@ class HomeScreen extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text("Hello World",
-                style: TextStyle(fontSize: 50, fontWeight: FontWeight.w800)),
+            const SubTitleText(lable: "Hello World", fontSize: 30),
             ElevatedButton(onPressed: () {}, child: const Text("Hello World")),
             SwitchListTile(
               title: Text(

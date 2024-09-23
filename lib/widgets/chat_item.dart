@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:e_commerce_app/screens/models/chat_model.dart';
+import 'package:e_commerce_app/models/chat_model.dart';
 
 class ChatItem extends StatelessWidget {
   final ChatModel chatModel;

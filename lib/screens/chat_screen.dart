@@ -1,5 +1,5 @@
-import 'package:e_commerce_app/screens/models/chat_model.dart';
-import 'package:e_commerce_app/screens/widgets/chat_item.dart';
+import 'package:e_commerce_app/models/chat_model.dart';
+import 'package:e_commerce_app/widgets/chat_item.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
