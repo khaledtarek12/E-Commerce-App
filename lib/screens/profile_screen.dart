@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/providers/theme_provider.dart';
 import 'package:e_commerce_app/services/assets_manager.dart';
+import 'package:e_commerce_app/widgets/appar_name_text.dart';
 import 'package:e_commerce_app/widgets/custom_list_tile.dart';
 import 'package:e_commerce_app/widgets/subtitletext.dart';
 import 'package:e_commerce_app/widgets/title_text.dart';
@@ -16,9 +17,12 @@ class ProfileScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Khaled Tarek'),
-        leading: Image.asset(
-          AssetsManager.shoppingCart,
+        title: const ApparNameText(fontSize: 25),
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Image.asset(
+            AssetsManager.shoppingCart,
+          ),
         ),
       ),
       body: Column(

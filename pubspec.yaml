@@ -41,6 +41,7 @@ dependencies:
   uicons: ^1.0.1
   persistent_bottom_nav_bar: ^6.2.1
   flutter_iconly: ^1.0.2
+  shimmer: ^3.0.0
 
 
 dev_dependencies:
