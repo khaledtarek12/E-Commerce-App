@@ -41,11 +41,6 @@ class _RootScreenState extends State<RootScreen> {
         physics: const NeverScrollableScrollPhysics(),
         controller: controller,
         children: screens,
-        onPageChanged: (index) {
-          setState(() {
-            currentScreen = index;
-          });
-        },
       ),
       bottomNavigationBar: NavigationBar(
         selectedIndex: currentScreen,
@@ -77,11 +72,7 @@ class _RootScreenState extends State<RootScreen> {
           setState(() {
             currentScreen = index;
           });
-          controller.animateToPage(
-            currentScreen,
-            duration: const Duration(milliseconds: 300),
-            curve: Curves.easeInOut,
-          );
+          controller.jumpToPage(currentScreen);
         },
       ),
     );

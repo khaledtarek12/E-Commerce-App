@@ -35,7 +35,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                 height: size.height * .22,
               ),
             ),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -50,7 +50,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                         onPressed: () {}, icon: const Icon(IconlyLight.heart)))
               ],
             ),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
