@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/constants/app_constants.dart';
 import 'package:e_commerce_app/providers/theme_provider.dart';
 import 'package:e_commerce_app/services/assets_manager.dart';
 import 'package:e_commerce_app/widgets/appar_name_text.dart';
@@ -56,7 +57,7 @@ class ProfileScreen extends StatelessWidget {
                         shape: BoxShape.circle,
                         image: DecorationImage(
                           image: NetworkImage(
-                            'https://img.lovepik.com/photo/48008/6386.jpg_wh860.jpg',
+                           AppConstants.productImageUrl,
                           ),
                           fit: BoxFit.cover,
                         ),

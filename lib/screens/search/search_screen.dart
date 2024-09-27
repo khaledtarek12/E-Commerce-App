@@ -1,4 +1,6 @@
+import 'package:dynamic_height_grid_view/dynamic_height_grid_view.dart';
 import 'package:e_commerce_app/services/assets_manager.dart';
+import 'package:e_commerce_app/widgets/product/product_widget.dart';
 import 'package:e_commerce_app/widgets/title_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
@@ -46,6 +48,7 @@ class _SearchScreenState extends State<SearchScreen> {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
+              const SizedBox(height: 15),
               Focus(
                 onFocusChange: (hasFocus) {
                   setState(() {}); // Rebuild to update icon color
@@ -76,6 +79,16 @@ class _SearchScreenState extends State<SearchScreen> {
                   ),
                 ),
               ),
+              const SizedBox(height: 15),
+              Expanded(
+                child: DynamicHeightGridView(
+                    builder: (context, index) {
+                      return const ProductWidget();
+                    },
+                    itemCount: 50,
+                    crossAxisCount: 2),
+              ),
+              const SizedBox(height: 15),
             ],
           ),
         ),
