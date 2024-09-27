@@ -35,15 +35,22 @@ class _ProductWidgetState extends State<ProductWidget> {
                 height: size.height * .22,
               ),
             ),
+            SizedBox(height: 15),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Flexible(flex: 5, child: TitleText(lable: 'Title' * 10)),
+                Flexible(
+                    flex: 5,
+                    child: TitleText(
+                      lable: 'Title' * 10,
+                      maxLines: 2,
+                    )),
                 Flexible(
                     child: IconButton(
                         onPressed: () {}, icon: const Icon(IconlyLight.heart)))
               ],
             ),
+            SizedBox(height: 15),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

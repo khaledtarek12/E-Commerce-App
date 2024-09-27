@@ -14,7 +14,7 @@ class RootScreen extends StatefulWidget {
 
 class _RootScreenState extends State<RootScreen> {
   late PageController controller;
-  int currentScreen = 1;
+  int currentScreen = 0;
   List<Widget> screens = const [
     HomeScreen(),
     SearchScreen(),
@@ -38,6 +38,7 @@ class _RootScreenState extends State<RootScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
+        physics: const NeverScrollableScrollPhysics(),
         controller: controller,
         children: screens,
         onPageChanged: (index) {

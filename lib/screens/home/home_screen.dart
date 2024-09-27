@@ -1,28 +1,56 @@
-import 'package:e_commerce_app/providers/theme_provider.dart';
-import 'package:e_commerce_app/widgets/subtitletext.dart';
+import 'package:card_swiper/card_swiper.dart';
+import 'package:e_commerce_app/constants/app_constants.dart';
+import 'package:e_commerce_app/services/assets_manager.dart';
+import 'package:e_commerce_app/widgets/appar_name_text.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final themeProvider = Provider.of<ThemeProvider>(context);
+    Size size = MediaQuery.sizeOf(context);
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          title: const ApparNameText(fontSize: 20),
+          leading: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Image.asset(
+              AssetsManager.shoppingCart,
+            ),
+          ),
+        ),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SubTitleText(lable: "Hello World", fontSize: 30),
-            ElevatedButton(onPressed: () {}, child: const Text("Hello World")),
-            SwitchListTile(
-              title: Text(
-                  themeProvider.getIsDarkTheme ? 'Dark Theme' : 'Light Theme'),
-              value: themeProvider.getIsDarkTheme,
-              onChanged: (value) {
-                themeProvider.setDarkTheme(themeValue: value);
-              },
+            SizedBox(
+              height: size.height * 0.24,
+              child: Swiper(
+                layout: SwiperLayout.TINDER,
+                itemWidth: MediaQuery.of(context).size.width,
+                itemHeight: 300.0,
+                itemBuilder: (context, index) {
+                  return Image.asset(
+                    AppConstants.bannerImages[index],
+                    fit: BoxFit.cover,
+                  );
+                },
+                autoplay: true,
+                customLayoutOption:
+                    CustomLayoutOption(startIndex: -1, stateCount: 3)
+                      ..addRotate([-45.0 / 180, 0.0, 45.0 / 180])
+                      ..addTranslate([
+                        const Offset(-370.0, -40.0),
+                        const Offset(0.0, 0.0),
+                        const Offset(370.0, -40.0)
+                      ]),
+                itemCount: AppConstants.bannerImages.length,
+                pagination: const SwiperPagination(
+                  alignment: Alignment.bottomCenter,
+                  builder: DotSwiperPaginationBuilder(
+                      activeColor: Colors.red, color: Colors.grey),
+                ),
+              ),
             )
           ],
         ),
