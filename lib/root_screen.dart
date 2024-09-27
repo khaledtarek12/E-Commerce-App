@@ -1,7 +1,7 @@
-import 'package:e_commerce_app/screens/cart_screen.dart';
+import 'package:e_commerce_app/screens/cart/cart_screen.dart';
 import 'package:e_commerce_app/screens/home_screen.dart';
 import 'package:e_commerce_app/screens/profile_screen.dart';
-import 'package:e_commerce_app/screens/search_screen.dart';
+import 'package:e_commerce_app/screens/search/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 
@@ -12,20 +12,26 @@ class RootScreen extends StatefulWidget {
   State<RootScreen> createState() => _RootScreenState();
 }
 
-late PageController controller;
-int currentScreen = 3;
-List<Widget> screens = const [
-  HomeScreen(),
-  SearchScreen(),
-  CartScreen(),
-  ProfileScreen(),
-];
-
 class _RootScreenState extends State<RootScreen> {
+  late PageController controller;
+  int currentScreen = 1;
+  List<Widget> screens = const [
+    HomeScreen(),
+    SearchScreen(),
+    CartScreen(),
+    ProfileScreen(),
+  ];
+
   @override
   void initState() {
     super.initState();
     controller = PageController(initialPage: currentScreen);
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
   }
 
   @override
@@ -34,6 +40,11 @@ class _RootScreenState extends State<RootScreen> {
       body: PageView(
         controller: controller,
         children: screens,
+        onPageChanged: (index) {
+          setState(() {
+            currentScreen = index;
+          });
+        },
       ),
       bottomNavigationBar: NavigationBar(
         selectedIndex: currentScreen,
@@ -52,7 +63,7 @@ class _RootScreenState extends State<RootScreen> {
           ),
           NavigationDestination(
             selectedIcon: Icon(IconlyBold.bag2),
-            icon: Icon(IconlyLight.bag2),
+            icon: Badge(label: Text('6'), child: Icon(IconlyLight.bag2)),
             label: 'Cart',
           ),
           NavigationDestination(
@@ -65,7 +76,11 @@ class _RootScreenState extends State<RootScreen> {
           setState(() {
             currentScreen = index;
           });
-          controller.jumpToPage(currentScreen);
+          controller.animateToPage(
+            currentScreen,
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeInOut,
+          );
         },
       ),
     );
