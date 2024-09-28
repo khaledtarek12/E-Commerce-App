@@ -1,11 +1,10 @@
-import 'dart:developer';
-
 import 'package:e_commerce_app/constants/app_constants.dart';
+import 'package:e_commerce_app/screens/inner_screen/product_details.dart';
+import 'package:e_commerce_app/utils/heart_button.dart';
 import 'package:e_commerce_app/widgets/subtitletext.dart';
 import 'package:e_commerce_app/widgets/title_text.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
 
 class LatestArrivalWidget extends StatelessWidget {
   const LatestArrivalWidget({super.key});
@@ -17,8 +16,9 @@ class LatestArrivalWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
-        onTap: () {
-          log('');
+        onTap: () async {
+          await Navigator.pushNamed(
+              context, ProductDetailsScreens.productRoute);
         },
         child: SizedBox(
           width: size.width * .5,
@@ -48,9 +48,7 @@ class LatestArrivalWidget extends StatelessWidget {
                   FittedBox(
                     child: Row(
                       children: [
-                        IconButton(
-                            onPressed: () {},
-                            icon: const Icon(IconlyLight.heart, size: 18)),
+                        const HeartButtonWidget(size: 18),
                         IconButton(
                             onPressed: () {},
                             icon: const Icon(Icons.add_shopping_cart_rounded,

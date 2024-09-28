@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/constants/app_constants.dart';
 import 'package:e_commerce_app/screens/cart/quantity_bottom_sheet.dart';
+import 'package:e_commerce_app/utils/heart_button.dart';
 import 'package:e_commerce_app/widgets/subtitletext.dart';
 import 'package:e_commerce_app/widgets/title_text.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
@@ -48,12 +49,7 @@ class CartWidget extends StatelessWidget {
                                   IconlyBroken.delete,
                                   color: Colors.red,
                                 )),
-                            IconButton(
-                                onPressed: () {},
-                                icon: const Icon(
-                                  IconlyBroken.heart,
-                                  color: Colors.red,
-                                )),
+                            const HeartButtonWidget(),
                           ],
                         )
                       ],

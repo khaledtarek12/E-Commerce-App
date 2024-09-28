@@ -80,6 +80,7 @@ class _SearchScreenState extends State<SearchScreen> {
               const SizedBox(height: 15),
               Expanded(
                 child: DynamicHeightGridView(
+                    mainAxisSpacing: 20,
                     builder: (context, index) {
                       return const ProductWidget();
                     },
