@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/constants/app_constants.dart';
 import 'package:e_commerce_app/providers/theme_provider.dart';
+import 'package:e_commerce_app/screens/inner_screen/whish_list.dart';
 import 'package:e_commerce_app/services/assets_manager.dart';
 import 'package:e_commerce_app/widgets/appar_name_text.dart';
 import 'package:e_commerce_app/widgets/custom_list_tile.dart';
@@ -57,7 +58,7 @@ class ProfileScreen extends StatelessWidget {
                         shape: BoxShape.circle,
                         image: DecorationImage(
                           image: NetworkImage(
-                           AppConstants.productImageUrl,
+                            AppConstants.productImageUrl,
                           ),
                           fit: BoxFit.cover,
                         ),
@@ -84,7 +85,10 @@ class ProfileScreen extends StatelessWidget {
                   CustomListTile(
                       image: AssetsManager.orderSvg, lable: 'All orders'),
                   CustomListTile(
-                      image: AssetsManager.wishlistSvg, lable: 'WishList'),
+                      image: AssetsManager.wishlistSvg,
+                      lable: 'WishList',
+                      onTap: () => Navigator.pushNamed(
+                          context, WhishListScreen.wishRoute)),
                   CustomListTile(
                       image: AssetsManager.recent, lable: 'Viewed recent'),
                   CustomListTile(

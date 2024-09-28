@@ -2,6 +2,7 @@ import 'package:e_commerce_app/constants/theme_data.dart';
 import 'package:e_commerce_app/providers/theme_provider.dart';
 import 'package:e_commerce_app/root_screen.dart';
 import 'package:e_commerce_app/screens/inner_screen/product_details.dart';
+import 'package:e_commerce_app/screens/inner_screen/whish_list.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -28,6 +29,7 @@ class EcommerceApp extends StatelessWidget {
           routes: {
             ProductDetailsScreens.productRoute: (context) =>
                 const ProductDetailsScreens(),
+            WhishListScreen.wishRoute: (context) => const WhishListScreen(),
           },
         );
       }),
