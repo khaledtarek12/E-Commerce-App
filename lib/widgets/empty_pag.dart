@@ -27,6 +27,7 @@ class EmptyPagWidget extends StatelessWidget {
               height: size.height * .35,
               width: double.infinity,
             ),
+            const SizedBox(height: 40),
             const TitleText(
               lable: 'Whoops',
               fontSize: 40,

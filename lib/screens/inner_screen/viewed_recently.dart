@@ -6,24 +6,24 @@ import 'package:e_commerce_app/widgets/title_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 
-class WhishListScreen extends StatelessWidget {
-  const WhishListScreen({super.key});
+class ViewedRecentlyScreen extends StatelessWidget {
+  const ViewedRecentlyScreen({super.key});
 
-  static const wishRoute = '/WhishListScreen';
+  static const viewedRoute = '/ViewedRecentlyScreen';
 
   final bool isEmpty = false;
   @override
   Widget build(BuildContext context) {
     return isEmpty
         ? EmptyPagWidget(
-            imagePath: AssetsManager.bagWish,
-            title: 'Your WhisList is empty',
+            imagePath: AssetsManager.shoppingBasket,
+            title: 'Your ViwedList is empty',
             subTitle:
                 'Looks like you don\'t add any thing yet to your cart \ngo ahead and start shooping',
             buttonText: 'Shop Now')
         : Scaffold(
             appBar: AppBar(
-              title: const TitleText(lable: 'WhishList (5)'),
+              title: const TitleText(lable: 'ViwedList (5)'),
               leading: Padding(
                 padding: const EdgeInsets.only(left: 16),
                 child: Image.asset(

@@ -1,6 +1,8 @@
 import 'package:e_commerce_app/constants/app_constants.dart';
 import 'package:e_commerce_app/providers/theme_provider.dart';
+import 'package:e_commerce_app/screens/inner_screen/viewed_recently.dart';
 import 'package:e_commerce_app/screens/inner_screen/whish_list.dart';
+import 'package:e_commerce_app/services/alret_dialog_methods.dart';
 import 'package:e_commerce_app/services/assets_manager.dart';
 import 'package:e_commerce_app/widgets/appar_name_text.dart';
 import 'package:e_commerce_app/widgets/custom_list_tile.dart';
@@ -87,10 +89,13 @@ class ProfileScreen extends StatelessWidget {
                   CustomListTile(
                       image: AssetsManager.wishlistSvg,
                       lable: 'WishList',
-                      onTap: () => Navigator.pushNamed(
+                      onTap: () async => await Navigator.pushNamed(
                           context, WhishListScreen.wishRoute)),
                   CustomListTile(
-                      image: AssetsManager.recent, lable: 'Viewed recent'),
+                      image: AssetsManager.recent,
+                      lable: 'Viewed recent',
+                      onTap: () async => await Navigator.pushNamed(
+                          context, ViewedRecentlyScreen.viewedRoute)),
                   CustomListTile(
                       image: AssetsManager.address, lable: 'Address'),
                   const Divider(thickness: 1),
@@ -127,7 +132,13 @@ class ProfileScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10))),
                 icon: const Icon(IconlyBold.logout),
                 label: const Text('Logout'),
-                onPressed: () {},
+                onPressed: () async {
+                  AlretDialogMethods.showErrorOrWarrnigDialog(
+                      context: context,
+                      subTilte: 'Logout ?',
+                      onPressed: () {},
+                      isError: true);
+                },
               ),
             )
           ],
