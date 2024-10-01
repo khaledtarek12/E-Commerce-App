@@ -1,5 +1,7 @@
 import 'package:e_commerce_app/constants/app_constants.dart';
 import 'package:e_commerce_app/providers/theme_provider.dart';
+import 'package:e_commerce_app/screens/auth/login.dart';
+import 'package:e_commerce_app/screens/inner_screen/orders/orders_screen.dart';
 import 'package:e_commerce_app/screens/inner_screen/viewed_recently.dart';
 import 'package:e_commerce_app/screens/inner_screen/whish_list.dart';
 import 'package:e_commerce_app/services/alret_dialog_methods.dart';
@@ -85,7 +87,10 @@ class ProfileScreen extends StatelessWidget {
                 children: [
                   const TitleText(label: 'General'),
                   CustomListTile(
-                      image: AssetsManager.orderSvg, lable: 'All orders'),
+                      image: AssetsManager.orderSvg,
+                      lable: 'All orders',
+                      onTap: () async => await Navigator.pushNamed(
+                          context, OrdersScreenFree.routName)),
                   CustomListTile(
                       image: AssetsManager.wishlistSvg,
                       lable: 'WishList',
@@ -133,11 +138,14 @@ class ProfileScreen extends StatelessWidget {
                 icon: const Icon(IconlyBold.logout),
                 label: const Text('Logout'),
                 onPressed: () async {
-                  AlretDialogMethods.showErrorOrWarrnigDialog(
+                  await MyAppMethods.showErrorOrWarrnigDialog(
                       context: context,
                       subTilte: 'Logout ?',
-                      onPressed: () {},
-                      isError: true);
+                      onPressed: () async {
+                        await Navigator.pushReplacementNamed(
+                            context, LoginScreen.routName);
+                      },
+                      isError: false);
                 },
               ),
             )

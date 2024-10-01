@@ -1,4 +1,6 @@
 import 'package:e_commerce_app/constants/my_validators.dart';
+import 'package:e_commerce_app/root_screen.dart';
+import 'package:e_commerce_app/screens/auth/forgot_password.dart';
 import 'package:e_commerce_app/screens/auth/register.dart';
 import 'package:e_commerce_app/widgets/appar_name_text.dart';
 import 'package:e_commerce_app/widgets/auth/google_btn.dart';
@@ -9,6 +11,7 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
+  static const routName = '/LoginScreen';
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -138,7 +141,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       Align(
                         alignment: Alignment.centerRight,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: ()  async {
+                                    await  Navigator.pushNamed(
+                                          context, ForgotPasswordScreen.routName);
+                                    },
                           child: const SubTitleText(
                             label: "Forgot password?",
                             textDecoration: TextDecoration.underline,
@@ -222,7 +228,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                       ),
                                     ),
                                     onPressed: () async {
-                                      _loginFct();
+                                    await  Navigator.pushReplacementNamed(
+                                          context, RootScreen.routName);
                                     },
                                   ),
                                 ),
@@ -241,8 +248,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             label: "Don't have an account?",
                           ),
                           TextButton(
-                            onPressed: () {
-                              Navigator.pushNamed(
+                            onPressed: ()async {
+                            await  Navigator.pushNamed(
                                   context, RegisterScreen.routName);
                             },
                             child: const SubTitleText(

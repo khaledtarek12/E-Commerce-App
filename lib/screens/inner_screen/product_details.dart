@@ -28,8 +28,8 @@ class _ProductDetailsScreensState extends State<ProductDetailsScreens> {
           leading: Padding(
             padding: const EdgeInsets.all(8.0),
             child: IconButton(
-              onPressed: () =>
-                  Navigator.canPop(context) ? Navigator.pop(context) : null,
+              onPressed: ()  =>
+                  Navigator.canPop(context) ?  Navigator.pop(context) : null,
               icon: const Icon(IconlyLight.arrowLeft2),
             ),
           ),

@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/constants/my_validators.dart';
+import 'package:e_commerce_app/services/alret_dialog_methods.dart';
 import 'package:e_commerce_app/widgets/appar_name_text.dart';
 import 'package:e_commerce_app/widgets/auth/pick_image_widget.dart';
 import 'package:e_commerce_app/widgets/subtitletext.dart';
@@ -8,8 +9,9 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:image_picker/image_picker.dart';
 
 class RegisterScreen extends StatefulWidget {
-  static const routName = '/RegisterScreen';
   const RegisterScreen({super.key});
+
+  static const routName = '/RegisterScreen';
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
@@ -59,7 +61,35 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Future<void> _registerFct() async {
     final isValid = _formKey.currentState!.validate();
     FocusScope.of(context).unfocus();
-    if (isValid) {}
+    if (isValid) {
+      _formKey.currentState!.save();
+      if (_pickedImage == null) {
+        MyAppMethods.showErrorOrWarrnigDialog(
+            context: context,
+            subTilte: 'Make sure to pick up image',
+            onPressed: () {});
+      }
+    }
+  }
+
+  Future<void> localImagePicker() async {
+    final ImagePicker picker = ImagePicker();
+    await MyAppMethods.imagePickerDialog(
+      context: context,
+      camraFunction: () async {
+        _pickedImage = await picker.pickImage(source: ImageSource.camera);
+        setState(() {});
+      },
+      galleryFunction: () async {
+        _pickedImage = await picker.pickImage(source: ImageSource.gallery);
+        setState(() {});
+      },
+      removeFunction: () {
+        setState(() {
+          _pickedImage = null;
+        });
+      },
+    );
   }
 
   @override
@@ -103,7 +133,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   width: size.width * 0.3,
                   child: PickImageWidget(
                     pickedImage: _pickedImage,
-                    function: () {},
+                    function: () async {
+                      await localImagePicker();
+                    },
                   ),
                 ),
                 const SizedBox(

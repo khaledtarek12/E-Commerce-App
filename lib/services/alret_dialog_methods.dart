@@ -1,12 +1,13 @@
 import 'package:e_commerce_app/services/assets_manager.dart';
 import 'package:e_commerce_app/widgets/subtitletext.dart';
+import 'package:e_commerce_app/widgets/title_text.dart';
 import 'package:flutter/material.dart';
 
-class AlretDialogMethods {
+class MyAppMethods {
   static Future<void> showErrorOrWarrnigDialog(
       {required BuildContext context,
       required String subTilte,
-      required Function onPressed,
+      required void Function()? onPressed,
       bool isError = true}) async {
     await showDialog(
       context: context,
@@ -43,10 +44,7 @@ class AlretDialogMethods {
                     ),
                   ),
                   TextButton(
-                    onPressed: () {
-                      onPressed;
-                      Navigator.pop(context);
-                    },
+                    onPressed: onPressed,
                     child: const Text(
                       'ok',
                       style: TextStyle(fontSize: 20),
@@ -55,6 +53,59 @@ class AlretDialogMethods {
                 ],
               )
             ],
+          ),
+        );
+      },
+    );
+  }
+
+  static Future<void> imagePickerDialog({
+    required BuildContext context,
+    required Function camraFunction,
+    required Function galleryFunction,
+    required Function removeFunction,
+  }) async {
+    await showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          title: const Center(
+            child: TitleText(label: 'Choose Option'),
+          ),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: [
+                TextButton.icon(
+                  onPressed: () {
+                    camraFunction();
+                    Navigator.canPop(context) ? Navigator.pop(context) : null;
+                  },
+                  label: const Text('Camer'),
+                  icon: const Icon(Icons.camera),
+                ),
+                const SizedBox(height: 8),
+                TextButton.icon(
+                  onPressed: () {
+                    galleryFunction();
+                    Navigator.canPop(context) ? Navigator.pop(context) : null;
+                  },
+                  label: const Text('Gallery'),
+                  icon: const Icon(Icons.image_rounded),
+                ),
+                const SizedBox(height: 8),
+                TextButton.icon(
+                  onPressed: () {
+                    removeFunction();
+                    Navigator.canPop(context) ? Navigator.pop(context) : null;
+                  },
+                  label: const Text('Remove'),
+                  icon: const Icon(Icons.remove_circle_rounded),
+                ),
+              ],
+            ),
           ),
         );
       },

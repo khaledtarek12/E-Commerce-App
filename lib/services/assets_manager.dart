@@ -1,4 +1,4 @@
- class AssetsManager {
+class AssetsManager {
   static String imagesPath = "assets/images";
   static String profileImagesPath = "assets/images/profile";
   static String bagImagesPath = "assets/images/bag";
@@ -6,7 +6,8 @@
   static String categoriesImagesPath = "assets/images/categories";
 
 // general images
-  static String forgotPassword = "$imagesPath/forgot_password.jpg";
+  static String forgotPassword = "$imagesPath/forgot_password.png";
+  static String forgotPasswordnoBg = "$imagesPath/forgot_password_prev_ui.png";
   static String mapRounded = "$imagesPath/rounded_map.png";
   static String warning = "$imagesPath/warning.png";
   static String error = "$imagesPath/error.png";
