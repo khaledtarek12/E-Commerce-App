@@ -10,7 +10,7 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 class ProductDetailsScreens extends StatefulWidget {
   const ProductDetailsScreens({super.key});
 
-  static const productRoute = '/ProductDetailsScreens';
+  static const routName = '/ProductDetailsScreens';
 
   @override
   State<ProductDetailsScreens> createState() => _ProductDetailsScreensState();
@@ -61,7 +61,7 @@ class _ProductDetailsScreensState extends State<ProductDetailsScreens> {
                       )),
                       const SizedBox(width: 20),
                       const SubTitleText(
-                        lable: '16.66\$',
+                        label: '16.66\$',
                         color: Colors.blue,
                         fontWeight: FontWeight.bold,
                       ),
@@ -100,13 +100,13 @@ class _ProductDetailsScreensState extends State<ProductDetailsScreens> {
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      TitleText(lable: 'About this Item'),
-                      SubTitleText(lable: 'In Categroy')
+                      TitleText(label: 'About this Item'),
+                      SubTitleText(label: 'In Categroy')
                     ],
                   ),
                   const SizedBox(height: 20),
                   const SizedBox(height: 20),
-                  SubTitleText(lable: 'description' * 15)
+                  SubTitleText(label: 'description' * 15)
                 ],
               ),
             ),

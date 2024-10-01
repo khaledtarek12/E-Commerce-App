@@ -9,7 +9,7 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 class WhishListScreen extends StatelessWidget {
   const WhishListScreen({super.key});
 
-  static const wishRoute = '/WhishListScreen';
+  static const routName = '/WhishListScreen';
 
   final bool isEmpty = false;
   @override
@@ -23,7 +23,7 @@ class WhishListScreen extends StatelessWidget {
             buttonText: 'Shop Now')
         : Scaffold(
             appBar: AppBar(
-              title: const TitleText(lable: 'WhishList (5)'),
+              title: const TitleText(label: 'WhishList (5)'),
               leading: Padding(
                 padding: const EdgeInsets.only(left: 16),
                 child: Image.asset(

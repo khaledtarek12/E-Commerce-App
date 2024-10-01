@@ -13,7 +13,7 @@ class ApparNameText extends StatelessWidget {
       period: const Duration(seconds: 2),
       highlightColor: Colors.red,
       child: TitleText(
-        lable: 'Shop Smart',
+        label: 'Shop Smart',
         fontSize: fontSize,
       ),
     );

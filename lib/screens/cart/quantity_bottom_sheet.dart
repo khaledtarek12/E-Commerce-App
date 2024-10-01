@@ -31,7 +31,7 @@ class QuantityBottomSheet extends StatelessWidget {
                   },
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Center(child: SubTitleText(lable: '${index + 1}')),
+                    child: Center(child: SubTitleText(label: '${index + 1}')),
                   ),
                 );
               },

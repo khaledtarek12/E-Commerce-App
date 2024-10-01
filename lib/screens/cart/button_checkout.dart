@@ -24,8 +24,8 @@ class ButtonCheckoutWidget extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    TitleText(lable: 'Total (6 Product / 6 items)'),
-                    SubTitleText(lable: '16.99\$', color: Colors.blue),
+                    TitleText(label: 'Total (6 Product / 6 items)'),
+                    SubTitleText(label: '16.99\$', color: Colors.blue),
                   ],
                 ),
               ),

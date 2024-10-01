@@ -29,20 +29,20 @@ class EmptyPagWidget extends StatelessWidget {
             ),
             const SizedBox(height: 40),
             const TitleText(
-              lable: 'Whoops',
+              label: 'Whoops',
               fontSize: 40,
               color: Colors.red,
             ),
             const SizedBox(height: 20),
             SubTitleText(
-              lable: title,
+              label: title,
               fontWeight: FontWeight.w600,
               fontSize: 25,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
               child: SubTitleText(
-                lable: subTitle,
+                label: subTitle,
                 fontWeight: FontWeight.w400,
                 fontSize: 20,
               ),

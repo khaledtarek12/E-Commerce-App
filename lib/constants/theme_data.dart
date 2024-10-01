@@ -11,6 +11,7 @@ class Styles {
       cardColor:
           isDarkTheme ? AppColors.darkCardColor : AppColors.lightCardColor,
       brightness: isDarkTheme ? Brightness.dark : Brightness.light,
+      
       appBarTheme: AppBarTheme(
         iconTheme:
             IconThemeData(color: isDarkTheme ? Colors.white : Colors.black),

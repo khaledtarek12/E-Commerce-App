@@ -36,7 +36,7 @@ class _SearchScreenState extends State<SearchScreen> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         appBar: AppBar(
-          title: const TitleText(lable: 'Search'),
+          title: const TitleText(label: 'Search'),
           leading: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Image.asset(

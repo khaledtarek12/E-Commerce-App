@@ -37,7 +37,7 @@ class ProfileScreen extends StatelessWidget {
               visible: false,
               child: Padding(
                 padding: EdgeInsets.all(20),
-                child: TitleText(lable: 'Please login to have ultimate access'),
+                child: TitleText(label: 'Please login to have ultimate access'),
               ),
             ),
             const SizedBox(height: 20),
@@ -71,8 +71,8 @@ class ProfileScreen extends StatelessWidget {
                   const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      TitleText(lable: 'Khaled Tarek'),
-                      SubTitleText(lable: 'tkhaled238@gmail.com')
+                      TitleText(label: 'Khaled Tarek'),
+                      SubTitleText(label: 'tkhaled238@gmail.com')
                     ],
                   ),
                 ],
@@ -83,24 +83,24 @@ class ProfileScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const TitleText(lable: 'General'),
+                  const TitleText(label: 'General'),
                   CustomListTile(
                       image: AssetsManager.orderSvg, lable: 'All orders'),
                   CustomListTile(
                       image: AssetsManager.wishlistSvg,
                       lable: 'WishList',
                       onTap: () async => await Navigator.pushNamed(
-                          context, WhishListScreen.wishRoute)),
+                          context, WhishListScreen.routName)),
                   CustomListTile(
                       image: AssetsManager.recent,
                       lable: 'Viewed recent',
                       onTap: () async => await Navigator.pushNamed(
-                          context, ViewedRecentlyScreen.viewedRoute)),
+                          context, ViewedRecentlyScreen.routName)),
                   CustomListTile(
                       image: AssetsManager.address, lable: 'Address'),
                   const Divider(thickness: 1),
                   const SizedBox(height: 10),
-                  const TitleText(lable: 'Settings'),
+                  const TitleText(label: 'Settings'),
                   const SizedBox(height: 10),
                   SwitchListTile(
                     secondary: Image.asset(AssetsManager.theme, height: 30),
@@ -114,7 +114,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   const Divider(thickness: 1),
                   const SizedBox(height: 10),
-                  const TitleText(lable: 'Others'),
+                  const TitleText(label: 'Others'),
                   const SizedBox(height: 10),
                   CustomListTile(
                       image: AssetsManager.privacy, lable: 'Privacy & Policy'),

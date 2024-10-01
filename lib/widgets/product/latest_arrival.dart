@@ -17,8 +17,7 @@ class LatestArrivalWidget extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
         onTap: () async {
-          await Navigator.pushNamed(
-              context, ProductDetailsScreens.productRoute);
+          await Navigator.pushNamed(context, ProductDetailsScreens.routName);
         },
         child: SizedBox(
           width: size.width * .5,
@@ -41,7 +40,7 @@ class LatestArrivalWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   TitleText(
-                    lable: 'Title' * 10,
+                    label: 'Title' * 10,
                     maxLines: 2,
                     fontSize: 18,
                   ),
@@ -58,7 +57,7 @@ class LatestArrivalWidget extends StatelessWidget {
                   ),
                   const FittedBox(
                       child: SubTitleText(
-                    lable: '16.66\$',
+                    label: '16.66\$',
                   ))
                 ],
               )),

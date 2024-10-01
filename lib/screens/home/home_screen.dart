@@ -61,7 +61,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 18),
                 const TitleText(
-                  lable: 'Latest arrival',
+                  label: 'Latest arrival',
                   fontSize: 22,
                 ),
                 const SizedBox(height: 18),
@@ -76,7 +76,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 18),
                 const TitleText(
-                  lable: 'Categories',
+                  label: 'Categories',
                   fontSize: 22,
                 ),
                 const SizedBox(height: 18),

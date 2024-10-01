@@ -9,7 +9,7 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 class ViewedRecentlyScreen extends StatelessWidget {
   const ViewedRecentlyScreen({super.key});
 
-  static const viewedRoute = '/ViewedRecentlyScreen';
+  static const routName = '/ViewedRecentlyScreen';
 
   final bool isEmpty = false;
   @override
@@ -23,7 +23,7 @@ class ViewedRecentlyScreen extends StatelessWidget {
             buttonText: 'Shop Now')
         : Scaffold(
             appBar: AppBar(
-              title: const TitleText(lable: 'ViwedList (5)'),
+              title: const TitleText(label: 'ViwedList (5)'),
               leading: Padding(
                 padding: const EdgeInsets.only(left: 16),
                 child: Image.asset(

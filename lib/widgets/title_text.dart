@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 class TitleText extends StatelessWidget {
   const TitleText({
     super.key,
-    required this.lable,
+    required this.label,
     this.color,
     this.fontSize = 20,
     this.maxLines,
   });
 
-  final String lable;
+  final String label;
   final Color? color;
   final int? maxLines;
 
@@ -17,7 +17,7 @@ class TitleText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(lable,
+    return Text(label,
         maxLines: maxLines,
         style: TextStyle(
           fontSize: fontSize,

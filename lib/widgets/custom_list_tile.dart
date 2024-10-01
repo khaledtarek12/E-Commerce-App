@@ -22,7 +22,7 @@ class CustomListTile extends StatelessWidget {
         image,
         height: 30,
       ),
-      title: SubTitleText(lable: '    $lable'),
+      title: SubTitleText(label: '    $lable'),
       trailing: const Icon(IconlyLight.arrowRight2),
     );
   }

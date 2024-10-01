@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/constants/theme_data.dart';
 import 'package:e_commerce_app/providers/theme_provider.dart';
 import 'package:e_commerce_app/screens/auth/login.dart';
+import 'package:e_commerce_app/screens/auth/register.dart';
 import 'package:e_commerce_app/screens/inner_screen/product_details.dart';
 import 'package:e_commerce_app/screens/inner_screen/viewed_recently.dart';
 import 'package:e_commerce_app/screens/inner_screen/whish_list.dart';
@@ -28,11 +29,12 @@ class EcommerceApp extends StatelessWidget {
               isDarkTheme: themeProvider.getIsDarkTheme, context: context),
           home: const LoginScreen(),
           routes: {
-            ProductDetailsScreens.productRoute: (context) =>
+            ProductDetailsScreens.routName: (context) =>
                 const ProductDetailsScreens(),
-            WhishListScreen.wishRoute: (context) => const WhishListScreen(),
-            ViewedRecentlyScreen.viewedRoute: (context) =>
+            WhishListScreen.routName: (context) => const WhishListScreen(),
+            ViewedRecentlyScreen.routName: (context) =>
                 const ViewedRecentlyScreen(),
+            RegisterScreen.routName: (context) => const RegisterScreen(),
           },
         );
       }),

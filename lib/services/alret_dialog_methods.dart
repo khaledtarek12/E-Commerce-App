@@ -23,7 +23,7 @@ class AlretDialogMethods {
                   height: 60,
                   width: 60),
               const SizedBox(height: 20),
-              SubTitleText(lable: subTilte, fontWeight: FontWeight.bold),
+              SubTitleText(label: subTilte, fontWeight: FontWeight.bold),
               const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: !isError

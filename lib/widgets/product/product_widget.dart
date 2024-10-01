@@ -20,7 +20,7 @@ class _ProductWidgetState extends State<ProductWidget> {
 
     return GestureDetector(
       onTap: () async {
-        await Navigator.pushNamed(context, ProductDetailsScreens.productRoute);
+        await Navigator.pushNamed(context, ProductDetailsScreens.routName);
       },
       child: Padding(
         padding: const EdgeInsets.all(2.0),
@@ -41,7 +41,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                 Flexible(
                     flex: 5,
                     child: TitleText(
-                      lable: 'Title' * 5,
+                      label: 'Title' * 5,
                       maxLines: 2,
                       fontSize: 18,
                     )),
@@ -55,7 +55,7 @@ class _ProductWidgetState extends State<ProductWidget> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Flexible(
-                      flex: 3, child: SubTitleText(lable: '16.66\$')),
+                      flex: 3, child: SubTitleText(label: '16.66\$')),
                   Flexible(
                     child: Material(
                       borderRadius: BorderRadius.circular(16),

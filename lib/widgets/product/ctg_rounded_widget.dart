@@ -21,7 +21,7 @@ class CtgRoundedWidget extends StatelessWidget {
         ),
         const SizedBox(height: 15),
         SubTitleText(
-          lable: label,
+          label: label,
           fontSize: 14,
           fontWeight: FontWeight.bold,
         ),

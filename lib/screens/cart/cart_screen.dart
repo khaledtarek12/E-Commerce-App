@@ -22,7 +22,7 @@ class CartScreen extends StatelessWidget {
         : Scaffold(
             bottomSheet: const ButtonCheckoutWidget(),
             appBar: AppBar(
-              title: const TitleText(lable: 'Cart (5)'),
+              title: const TitleText(label: 'Cart (5)'),
               leading: Padding(
                 padding: const EdgeInsets.only(left: 16),
                 child: Image.asset(

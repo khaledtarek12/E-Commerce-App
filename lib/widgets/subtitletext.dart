@@ -4,7 +4,7 @@ class SubTitleText extends StatelessWidget {
   const SubTitleText({
     super.key,
     this.fontWeight = FontWeight.normal,
-    required this.lable,
+    required this.label,
     this.color,
     this.textDecoration = TextDecoration.none,
     this.fontStyle = FontStyle.normal,
@@ -12,7 +12,7 @@ class SubTitleText extends StatelessWidget {
   });
 
   final FontWeight fontWeight;
-  final String lable;
+  final String label;
   final Color? color;
   final TextDecoration textDecoration;
   final FontStyle fontStyle;
@@ -20,7 +20,7 @@ class SubTitleText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(lable,
+    return Text(label,
         style: TextStyle(
           fontSize: fontSize,
           fontWeight: fontWeight,

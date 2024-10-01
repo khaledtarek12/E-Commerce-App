@@ -37,7 +37,7 @@ class CartWidget extends StatelessWidget {
                         SizedBox(
                           width: size.width * .6,
                           child: TitleText(
-                            lable: 'Title' * 10,
+                            label: 'Title' * 10,
                             maxLines: 2,
                           ),
                         ),
@@ -58,7 +58,7 @@ class CartWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         const SubTitleText(
-                          lable: '16\$',
+                          label: '16\$',
                           fontSize: 20,
                           color: Colors.blue,
                         ),
