@@ -1,6 +1,6 @@
 import 'package:e_commerce_app/constants/theme_data.dart';
 import 'package:e_commerce_app/providers/theme_provider.dart';
-import 'package:e_commerce_app/root_screen.dart';
+import 'package:e_commerce_app/screens/auth/login.dart';
 import 'package:e_commerce_app/screens/inner_screen/product_details.dart';
 import 'package:e_commerce_app/screens/inner_screen/viewed_recently.dart';
 import 'package:e_commerce_app/screens/inner_screen/whish_list.dart';
@@ -26,7 +26,7 @@ class EcommerceApp extends StatelessWidget {
           title: 'E-Commerce App',
           theme: Styles.themeData(
               isDarkTheme: themeProvider.getIsDarkTheme, context: context),
-          home: const RootScreen(),
+          home: const LoginScreen(),
           routes: {
             ProductDetailsScreens.productRoute: (context) =>
                 const ProductDetailsScreens(),
