@@ -1,5 +1,6 @@
 import 'package:dynamic_height_grid_view/dynamic_height_grid_view.dart';
 import 'package:e_commerce_app/services/assets_manager.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:e_commerce_app/widgets/product/product_widget.dart';
 import 'package:e_commerce_app/widgets/title_text.dart';
 import 'package:flutter/material.dart';
@@ -82,7 +83,20 @@ class _SearchScreenState extends State<SearchScreen> {
                 child: DynamicHeightGridView(
                     mainAxisSpacing: 20,
                     builder: (context, index) {
-                      return const ProductWidget();
+                      return Animate(
+                        effects: [
+                          FadeEffect(
+                            duration: 500.ms, // Fade duration
+                            curve: Curves.easeInOut,
+                          ),
+                          ScaleEffect(
+                            begin: const Offset(0.8, 0.8),
+                            end: const Offset(1.0, 1.0),
+                            duration: 400.ms,
+                          ),
+                        ],
+                        child: const ProductWidget(), // Your product widget
+                      ).animate(delay: (100 * index).ms).fadeIn();
                     },
                     itemCount: 50,
                     crossAxisCount: 2),

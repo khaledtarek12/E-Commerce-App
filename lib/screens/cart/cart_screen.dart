@@ -41,11 +41,15 @@ class CartScreen extends StatelessWidget {
                 ),
               ],
             ),
-            body: ListView.builder(
-              itemCount: 15,
-              itemBuilder: (context, index) {
-                return const CartWidget();
-              },
+            body: Padding(
+              padding: const EdgeInsets.only(
+                  bottom: 100.0), // Add padding for the bottom sheet
+              child: ListView.builder(
+                itemCount: 15,
+                itemBuilder: (context, index) {
+                  return const CartWidget();
+                },
+              ),
             ),
           );
   }
