@@ -6,12 +6,12 @@ import 'package:e_commerce_app/widgets/product/ctg_rounded_widget.dart';
 import 'package:e_commerce_app/widgets/product/latest_arrival.dart';
 import 'package:e_commerce_app/widgets/title_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-    static const routName = '/HomeScreen';
-
+  static const routName = '/HomeScreen';
 
   @override
   Widget build(BuildContext context) {
@@ -70,11 +70,25 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(height: 18),
                 SizedBox(
                   height: size.height * .2,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 4,
-                    itemBuilder: (context, index) =>
-                        const LatestArrivalWidget(),
+                  child: AnimationLimiter(
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 4,
+                      itemBuilder: (context, index) {
+                        // Apply the animation to each item
+                        return AnimationConfiguration.staggeredList(
+                          position: index,
+                          duration:
+                              const Duration(seconds: 1), // Animation duration
+                          child: const SlideAnimation(
+                            verticalOffset:
+                                50.0, // Start sliding the item from 50 pixels below
+                            curve: Curves.bounceIn,
+                            child: LatestArrivalWidget(), // Your widget here
+                          ),
+                        );
+                      },
+                    ),
                   ),
                 ),
                 const SizedBox(height: 18),
