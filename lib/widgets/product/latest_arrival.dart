@@ -27,7 +27,7 @@ class LatestArrivalWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(20), // Softer corners
             boxShadow: [
               BoxShadow(
-                color: Colors.grey
+                color: Colors.transparent
                     .withOpacity(0.15), // Slightly more shadow for depth
                 blurRadius: 15, // Softer shadow blur
                 offset:
@@ -84,6 +84,8 @@ class LatestArrivalWidget extends StatelessWidget {
                                     BorderRadius.circular(8), // Rounded button
                               ),
                               child: IconButton(
+                                style: IconButton.styleFrom(
+                                    shape: const RoundedRectangleBorder()),
                                 onPressed: () {},
                                 icon: const Icon(
                                   Icons.add_shopping_cart_rounded,
