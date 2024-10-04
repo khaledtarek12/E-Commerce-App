@@ -102,7 +102,6 @@ class LatestArrivalWidget extends StatelessWidget {
                         const SubTitleText(
                           label: '16.66\$',
                           fontSize: 20,
-
                           color: Colors
                               .white, // Use a contrasting color for the price
                         ),
